@@ -1,35 +1,50 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+// import ViteIntro from "./components/ViteIntro/ViteIntro.tsx"
+// import ClassComponent from "./components/ClassComponent.tsx";
+// import FunctionalComponent from "./components/FunctionalComponent.tsx";
+// import ArrowFunctionalComponent from "./components/ArrowFunctionalComponent.tsx";
+// import ArrowFunctionalComponentWithProps from "./components/ArrowFunctionalComponentWithProps.tsx";
+// import ArrowFunctionalComponentWithPropsType from "./components/ArrowFunctionalComponentWithPropsType.tsx";
+// import Card from "./components/Card.tsx";
+import Layout from "./components/Layout.tsx";
+// import ViteIntro from "./components/ViteIntro/ViteIntro.tsx";
+// import FunctionalComponentWithState from "./components/FunctionalComponentWithState.tsx";
+// import ClassComponentWithState from "./components/ClassComponentWithState.tsx";
+import Counter from "./components/Counter.tsx";
 
 function App() {
-  const [count, setCount] = useState(0)
+    return (
+        <>
+            {/*<ViteIntro />*/}
+            {/*<ClassComponent />*/}
+            {/*<FunctionalComponent />*/}
+            {/*<ArrowFunctionalComponent />*/}
+            {/*<ArrowFunctionalComponentWithProps title="Is a Arrow Functional Component With Props" />*/}
+            {/*<ArrowFunctionalComponentWithProps title="2nd Title" />*/}
+            {/*<ArrowFunctionalComponentWithPropsType*/}
+            {/*  title="Is a Arrow Functional Component With 2 Props"*/}
+            {/*  description="Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quod, veniam."*/}
+            {/*/>*/}
+            {/*<Card title="Card">*/}
+            {/*  <ArrowFunctionalComponentWithPropsType*/}
+            {/*    title="Is a Arrow Functional Component With 2 Props"*/}
+            {/*    description="Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quod, veniam."*/}
+            {/*  />*/}
+            {/*</Card>*/}
 
-  return (
-    <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
+            <Layout>
+                {/*<ArrowFunctionalComponentWithPropsType*/}
+                {/*  title="Is a Arrow Functional Component With 2 Props"*/}
+                {/*  description="Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quod, veniam."*/}
+                {/*/>*/}
+
+                {/*<FunctionalComponentWithState />*/}
+                {/*<ClassComponentWithState />*/}
+
+                <Counter />
+
+            </Layout>
+        </>
+    )
 }
 
 export default App
