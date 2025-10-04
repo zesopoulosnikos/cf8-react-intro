@@ -1,21 +1,31 @@
 import {useState} from "react";
 import CounterButton from "./CounterButton.tsx";
 
-const Counter = () => {
+const CounterWithMoreStates = () => {
     const [count, setCount] = useState(0);
+    const [lastAction, setLastAction] = useState("");
+    const [time, setTime] = useState("");
+
+    const getCurrentTime = () => new Date().toLocaleTimeString();
 
     const increaseCount = () => {
         setCount(count + 1);
+        setLastAction("Increase");
+        setTime(getCurrentTime());
     }
 
     const decreaseCount = () => {
         if (count > 0){
             setCount(count - 1);
+            setLastAction("Decrease");
+            setTime(getCurrentTime());
         }
     }
 
     const resetCount = () => {
         setCount(0);
+        setLastAction("Reset");
+        setTime(getCurrentTime());
     }
 
     return (
@@ -37,29 +47,12 @@ const Counter = () => {
                     disabled={count === 0}
                     addClasses="bg-cf-dark-red disabled:bg-red-500"
                 />
-
-                {/*<button*/}
-                {/*  className="bg-cf-dark-gray text-white py-2 px-4"*/}
-                {/*  onClick={increaseCount}*/}
-                {/*>*/}
-                {/*  Increase*/}
-                {/*</button>*/}
-                {/*<button*/}
-                {/*  className="bg-cf-dark-gray disabled:bg-cf-gray text-white py-2 px-4"*/}
-                {/*  onClick={decreaseCount}*/}
-                {/*  disabled={count === 0}*/}
-                {/*>*/}
-                {/*  Decrease*/}
-                {/*</button>*/}
-                {/*<button*/}
-                {/*  className="bg-cf-dark-gray disabled:bg-cf-gray text-white py-2 px-4"*/}
-                {/*  onClick={resetCount}*/}
-                {/*  disabled={count === 0}*/}
-                {/*>*/}
-                {/*  Reset*/}
-                {/*</button>*/}
             </div>
+            <p className="text-center text-cf-gray pt-8">
+                Last Change: <strong>{lastAction || "-"}</strong> at <strong>{time || "-"}</strong>
+            </p>
+
         </>
     )
 }
-export default Counter;
+export default CounterWithMoreStates;
